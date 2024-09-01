@@ -14,7 +14,7 @@ jobs:
         run: python print.py
 
       - name: Make Changes
-        run: echo "Hello World!" > print.py     
+        run: echo "print("Hello world")" > print.py    
 
       - name: Commit and Push changes
         env:
