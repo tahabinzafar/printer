@@ -1,0 +1,13 @@
+name: Run print.py every 2 minutes
+
+on:
+  schedule:
+    - cron: "*/2 * * * *"  # Every 2 minutes
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Prints
+        run: python print.py
