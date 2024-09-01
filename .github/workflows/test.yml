@@ -10,11 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Prints
-        run: python print.py
-
       - name: Make Changes
         run: echo "print("Hello world")" > print.py    
+
+      - name: Prints
+        run: python print.py 
+
 
       - name: Commit and Push changes
         env:
@@ -22,6 +23,7 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull
           git add .
           git commit -m "Automated commit of print.py output"
           git push
