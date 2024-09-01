@@ -9,8 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
       - name: Prints
         run: python print.py
+
+      - name: Make Changes
+        run: echo "Hello World!" > print.py     
 
       - name: Commit changes
         run: |
